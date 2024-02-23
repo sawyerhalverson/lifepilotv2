@@ -32,10 +32,7 @@ function Insights() {
       console.log("Response data:", response.data);
 
       const currentDate = new Date();
-      const filteredData = response.data.filter((item) => {
-        const startTime = new Date(item.start_time);
-        return currentDate - startTime <= interval * 60 * 60 * 1000;
-      });
+      const filteredData = response.data;
 
       const labels = filteredData.map((item) => item.category_name);
       const data = filteredData.map((item) => {
